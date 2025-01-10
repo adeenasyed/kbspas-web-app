@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    background-color: #F9F7F2;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.content {
+    flex: 1;
+}
+
+@font-face {
+    font-family: 'Bright';
+    src: url('/resources/fonts/Bright DEMO.otf') format('opentype');
+}
+
+.starry-background {
+    background-image: url('/resources/starry-background.svg');
+    background-size: 2000px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding-bottom: 60px;
+}
+
+.flip-card {
+    perspective: 1000px;
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    animation: flip 1.25s ease-in-out forwards;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.services-header {
+    height: 180px;
+    background-size: 2000px 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lashes-header {
+    background-image: url('/resources/headers/lashes-header.svg');
+}
+
+.brows-header {
+    background-image: url('/resources/headers/brows-header.svg');
+}
+
+.policies-header {
+    background-image: url('/resources/headers/policies-header.svg');
+    height: 120px;
+    background-size: auto 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.toggle-button {
+    margin-top: 1;
+    margin-bottom: 1;
+    margin-right: 2;
+}
+  
+.toggle-button:nth-child(4n) {
+    margin-right: 0;
+}
+
+@keyframes ldio-0nf27cusvn9-o {
+    0%    { opacity: 1; transform: translate(0 0) }
+    49.99% { opacity: 1; transform: translate(70px,0) }
+    50%    { opacity: 0; transform: translate(70px,0) }
+    100%    { opacity: 0; transform: translate(0,0) }
+}
+@keyframes ldio-0nf27cusvn9 {
+    0% { transform: translate(0,0) }
+    50% { transform: translate(70px,0) }
+    100% { transform: translate(0,0) }
+}
+.ldio-0nf27cusvn9 div {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    top: 60px;
+    left: 30px;
+}
+.ldio-0nf27cusvn9 div:nth-child(1) {
+    background: #d4a49f;
+    animation: ldio-0nf27cusvn9 1s linear infinite;
+    animation-delay: -0.5s;
+}
+.ldio-0nf27cusvn9 div:nth-child(2) {
+    background: #f1d3d0;
+    animation: ldio-0nf27cusvn9 1s linear infinite;
+    animation-delay: 0s;
+}
+.ldio-0nf27cusvn9 div:nth-child(3) {
+    background: #d4a49f;
+    animation: ldio-0nf27cusvn9-o 1s linear infinite;
+    animation-delay: -0.5s;
+}
+.loadingio-spinner-dual-ball-k76uferhhgp {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: transparent;
+}
+.ldio-0nf27cusvn9 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+}
+.ldio-0nf27cusvn9 div { box-sizing: content-box; }

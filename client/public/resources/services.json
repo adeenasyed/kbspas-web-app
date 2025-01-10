@@ -1,0 +1,13 @@
+[
+    {"_id":{"$oid":"66906b9d225365ba27537b2c"},"img":"manhua.jpg","name":"Manhua","type":"Eyelash Services","price":100,"hasRefill":true,"refillPrice":75,"index":7},
+    {"_id":{"$oid":"65051a30cad4a35ed855573e"},"img":"volumes.jpg","name":"Volumes","type":"Eyelash Services","price":130,"hasRefill":true,"refillPrice":75,"index":3},
+    {"_id":{"$oid":"65051a30cad4a35ed855573f"},"img":"mega-volumes.jpg","name":"Mega Volumes","type":"Eyelash Services","price":140,"hasRefill":true,"refillPrice":80,"index":4},
+    {"_id":{"$oid":"6521ce02d0140fc0ef82e3e9"},"img":"placeholder.png","name":"Brow Lamination + Lash Lift Combo","type":"Other","price":85,"hasRefill":false,"index":12},
+    {"_id":{"$oid":"65051a30cad4a35ed855573d"},"img":"hybrids.jpg","name":"Hybrids","type":"Eyelash Services","price":120,"hasRefill":true,"refillPrice":70,"index":2},
+    {"_id":{"$oid":"65051a30cad4a35ed8555744"},"img":"brow-lamination.jpg","name":"Brow Lamination","type":"Eyebrow Services","price":50,"hasRefill":false,"index":10},
+    {"_id":{"$oid":"65051a30cad4a35ed855573c"},"img":"classics.jpg","name":"Classics","type":"Eyelash Services","price":110,"hasRefill":true,"refillPrice":65,"index":1},
+    {"_id":{"$oid":"65051a30cad4a35ed8555740"},"img":"placeholder.png","name":"Mini Fill","type":"Eyelash Services","price":50,"hasRefill":false,"index":9},
+    {"_id":{"$oid":"65051a30cad4a35ed8555745"},"img":"placeholder.png","name":"Brow Lamination + Tint","type":"Eyebrow Services","price":60,"hasRefill":false,"index":11},
+    {"_id":{"$oid":"6521d0c7d0140fc0ef82e3ea"},"img":"lash-botox.jpg","name":"Lash Botox","type":"Eyelash Services","price":85,"hasRefill":false,"index":8},
+    {"_id":{"$oid":"65051a30cad4a35ed8555743"},"img":"placeholder.png","name":"Eyelash Extension Removal","type":"Eyelash Services","price":30,"hasRefill":false,"index":10}
+]

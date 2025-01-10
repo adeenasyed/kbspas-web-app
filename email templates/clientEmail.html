@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .email-container {
+            margin: auto;
+            width: 600px;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        .header {
+            border-radius: 10px 10px 0 0;
+            padding: 10px 20px;
+            background-color: #B67C76;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .appointment-details {
+            padding-bottom: 10px;
+        }
+        .details-row {
+            margin-bottom: 10px;
+        }
+        .details-label {
+            font-weight: bold;
+        }
+        .footer {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            Appointment Confirmation
+        </div>
+        <div class="content">
+            <p>Dear ${firstName},</p>
+            <p>&nbsp;</p>
+            <p>Thank you for choosing KbSpas! Please see your appointment details below:</p>
+            <div class="appointment-details">
+            <div class="details-row">
+                    <span class="details-label">Service:</span> ${service}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Location:</span> ${address}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Date:</span> ${date}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Time:</span> ${time}
+                </div>
+            </div>
+            <p>Please note that the remaining total of $${total} will be due on the date of the appointment. If you have any questions, please feel free to reply to this email!</p>
+            <p>&nbsp;</p>
+            <p>            
+                Regards,<br>
+                Kai
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

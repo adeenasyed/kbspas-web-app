@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .email-container {
+            margin: auto;
+            width: 600px;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        .header {
+            border-radius: 10px 10px 0 0;
+            padding: 10px 20px;
+            background-color: #B67C76;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .appointment-details {
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        .details-row {
+            margin-bottom: 10px;
+        }
+        .details-label {
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="email-container">
+        <div class="header">
+            Appointment Notification
+        </div>
+        <div class="content">
+
+            <p class="error">${error}</p>
+            <p>An appointment has been booked! See details below:</p>
+
+            <div class="appointment-details">
+                <div class="details-row">
+                    <span class="details-label">Name:</span> ${name}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Email:</span> ${email}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Phone Number:</span> ${phone}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Service:</span> ${service}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Location:</span> ${location}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Date:</span> ${date}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Time:</span> ${time}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Promo applied:</span> ${promo}
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Remaining amount owed:</span> $${total}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
