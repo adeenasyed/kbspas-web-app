@@ -14,6 +14,8 @@ import Checkbox from "@mui/material/Checkbox";
 import theme from '../../theme';
 import DescriptionIcon from '@mui/icons-material/Description';
 
+const documentOptions = { verbosity: pdfjs.VerbosityLevel.ERRORS };
+
 function WaiverForm({waiver, handleWaiverChange, FormHeader}) {
     const [viewWaiver, setViewWaiver] = useState(false);
 
@@ -30,7 +32,7 @@ function WaiverForm({waiver, handleWaiverChange, FormHeader}) {
                     </button>
 
                     <Dialog open={viewWaiver} onClose={() => setViewWaiver(false)} maxWidth="md">
-                        <Document file='/resources/waiver/Eyelash Technician Services Waiver and Agreement.pdf'>
+                        <Document file='/resources/waiver/Eyelash Technician Services Waiver and Agreement.pdf' options={documentOptions}>
                             <Page pageNumber={1} />
                         </Document>
                     </Dialog>

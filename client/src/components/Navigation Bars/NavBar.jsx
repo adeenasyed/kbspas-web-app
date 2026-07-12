@@ -4,10 +4,9 @@ import Drawer from '@mui/material/Drawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 const pages = [
-  // {name: 'Home', path: '/'}, 
   {name: 'Services', path: '/services'}, 
   {name: 'Policies', path: '/policies'},
-  {name: 'Book Now', path: '/booknow'}
+  {name: 'Book Now', path: '/'}
 ];
 
 const platforms = [

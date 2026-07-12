@@ -1,5 +1,4 @@
 import './App.css';
-import Home from './components/Home/Home';
 import Services from './components/Services/Services';
 import BookNow from './components/Book Now/BookNow';
 import Policies from './components/Policies/Policies';
@@ -17,9 +16,8 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:3000';
 
 const routes = [
-  { path: "/", element: <Home /> },
+  { path: "/", element: <BookNow /> },
   { path: "/services", element: <Services /> },
-  { path: "/booknow", element: <BookNow /> },
   { path: "/policies", element: <Policies /> },
   { path: "/privacypolicy", element: <PrivacyPolicy /> },
   { path: "/admin", element: <AdminAuthentication /> },

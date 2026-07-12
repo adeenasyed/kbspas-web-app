@@ -19,11 +19,6 @@ body {
     flex: 1;
 }
 
-@font-face {
-    font-family: 'Bright';
-    src: url('/resources/fonts/Bright DEMO.otf') format('opentype');
-}
-
 .starry-background {
     background-image: url('/resources/starry-background.svg');
     background-size: 2000px;

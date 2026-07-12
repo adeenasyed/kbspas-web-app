@@ -4,20 +4,26 @@ import ServiceSelection from "./ServiceSelection";
 import LocationSelection from "./LocationSelection";
 import DateSelection from "./DateSelection";
 import TimeSelection from "./TimeSelection";
-import StripeContainer from "../Pay Now/StripeContainer";
+import PayNow from "../Pay Now/PayNow";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import EastRoundedIcon from '@mui/icons-material/EastRounded';
 import Collapse from "@mui/material/Collapse";
 import { format } from 'date-fns';
+import allServices from '/public/resources/services.json'
+
+const ALL_TIME_SLOTS = [
+    '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM',
+    '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM',
+    '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM',
+    '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM',
+    '8:00 PM', '8:30 PM'
+].map(startTime => ({ startTime, available: true }));
 
 function BookNow({bypass}) {
     const [services, setServices] = useState([]);
-    const [availability, setAvailability] = useState([]);
-    const [availableDates, setAvailableDates] = useState([]);
     const [availableTimes, setAvailableTimes] = useState([]);
 
     const [generalError, setGeneralError] = useState(false);
@@ -30,8 +36,7 @@ function BookNow({bypass}) {
 
     const fetchServices = async () => {
         try {
-            const response = await axios.get(`/api/fetchServices`);
-            const data = response.data;     
+            const data = allServices;
             const updatedServices = data.reduce((acc, service) => {
                     if (service.hasRefill) {
                         acc.push({...service, name: `${service.name} - Full Set`});
@@ -60,29 +65,10 @@ function BookNow({bypass}) {
         fetchServices();
     }, []);
 
-    const fetchAvailability = async () => {
-        try {
-            const response = await axios.get(`/api/fetchAvailability`, {
-                params: { location: selectedLocation }
-            });
-            const data = response.data;
-            setAvailability(data);
-            const dates = data.map(entry => entry.date);
-            setAvailableDates(dates);
-        } catch (error) {
-            setGeneralError(true);
-        }
-    };
-
-    useEffect(() => {
-        if (selectedLocation) {
-            fetchAvailability();
-        }
-    }, [selectedLocation]);
-
     const disableUnavailableDates = (date) => {
         const formattedDate = format(new Date(date), 'MM-dd-yyyy');
-        return !availableDates.includes(formattedDate);
+        const today = format(new Date(), 'MM-dd-yyyy');
+        return formattedDate === today;
     };
 
     const handleServiceSelection = (event, service) => {
@@ -90,11 +76,10 @@ function BookNow({bypass}) {
         setTotal(service.price);
     };
 
-    const handleLocationSelection = (event) => { 
+    const handleLocationSelection = (event) => {
         setSelectedLocation(event.target.value);
         setSelectedDate();
-        setAvailableDates([]);
-        if (selectedTimeSlot) { 
+        if (selectedTimeSlot) {
             setSelectedTimeSlot();
             setAvailableTimes([]);
         } else { 
@@ -109,8 +94,7 @@ function BookNow({bypass}) {
         setSelectedTimeSlot();
         const formattedDate = format(new Date(date), 'MM-dd-yyyy');
         setSelectedDate(formattedDate);
-        const correspondingEntry = availability.find(entry => entry.date === formattedDate);
-        setAvailableTimes(correspondingEntry.timeSlots);
+        setAvailableTimes(ALL_TIME_SLOTS);
     };
 
     const handleTimeSelection = (event, time) => {
@@ -127,7 +111,7 @@ function BookNow({bypass}) {
     }, [renderPayNow]);
     
     if (renderPayNow) {
-        return (<StripeContainer selectedService={selectedService} selectedLocation={selectedLocation} selectedDate={selectedDate} selectedTimeSlot={selectedTimeSlot} total={total} bypass={bypass}/>)
+        return (<PayNow selectedService={selectedService} selectedLocation={selectedLocation} selectedDate={selectedDate} selectedTimeSlot={selectedTimeSlot} total={total} bypass={bypass}/>)
     }
 
     return (
