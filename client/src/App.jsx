@@ -12,9 +12,6 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://kbspas.ca';
-axios.defaults.baseURL = 'http://localhost:3000';
-
 const routes = [
   { path: "/", element: <BookNow /> },
   { path: "/services", element: <Services /> },
