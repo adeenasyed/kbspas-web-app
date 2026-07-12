@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <div className="sticky top-0 z-50 w-full bg-gray-400 text-white text-center text-sm py-1">
-        This app has been decommissioned, some features may not be functional
+        This app has been decommissioned, some features may not be available
       </div>
       <Router>
         <ScrollToTop/>
